@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Eyeconic Hero Parallax</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+  <style>
+    /* Scroll reveal animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body class="bg-white text-black">
+
+<!-- ================= NAVBAR ================= -->
+<header class="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur">
+  <div class="max-w-7xl mx-auto px-10 py-5 flex items-center justify-between">
+    <div class="text-xl font-semibold tracking-wide">EYCONIC</div>
+
+    <nav class="hidden md:flex gap-10 text-sm">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+      <a href="#">Pages</a>
+    </nav>
+
+    <div class="text-lg">👜</div>
+  </div>
+</header>
+
+<section class="bg-gray-50 py-12" style="margin-top: 200PX;">
+  <div class="max-w-6xl mx-auto px-6 md:flex md:justify-between md:items-start gap-8">
+
+    <!-- Left: Title -->
+    <div class="md:w-1/2">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">
+        TOP 5 SUNGLASSES TRENDS FOR 2025
+      </h2>
+
+      <!-- Author info -->
+      <div class="flex items-center gap-4 mt-4">
+        <img src="https://i.pravatar.cc/40?img=5" alt="Maya Brooks" class="w-10 h-10 rounded-full">
+        <div class="text-gray-600 text-sm">
+          <p class="font-medium text-gray-900">Maya Brooks</p>
+          <div class="flex items-center gap-2 text-gray-400 text-xs">
+            <span>📅 October 24, 2025</span>
+            <span>⏱ 4 min read</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Description + Button -->
+    <div class="md:w-1/2 mt-6 md:mt-0">
+      <p class="text-gray-600 mb-6">
+        Discover the latest sunglasses and optical trends, expert eye-care advice,
+        and in-depth style inspiration to elevate every look. Go behind the scenes
+        with exclusive stories about our design process, sustainability efforts, 
+        and the people who make Eyecinic unique.
+      </p>
+      <a href="#"
+         class="inline-block px-6 py-3 border border-gray-900 text-gray-900 font-medium hover:bg-gray-900 hover:text-white transition">
+        READ FULL BLOG ↗
+      </a>
+    </div>
+
+  </div>
+</section>
+<section class="relative w-full h-[80vh] flex items-center justify-center bg-white overflow-hidden">
+
+  <!-- Flowers Background -->
+  <img 
+    src="https://cdn.prod.website-files.com/68fb711044bb5e266ea3c279/68fb782936be5314a2ab28fb_Blog%20Image%2014-p-1600.webp" 
+    alt="Yellow Flowers with Sunglasses"
+    class="absolute inset-0 w-full h-full object-cover"
+  >
+
+</section>
+<section class="max-w-7xl mx-auto px-8 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+  <!-- Sidebar Filters -->
+  <aside class="space-y-8 md:col-span-1">
+    <!-- Quick Filters -->
+    <div>
+      <h3 class="font-bold text-lg mb-4">QUICK FILTERS</h3>
+      <ul class="space-y-2">
+        <li>
+          <label class="flex items-center space-x-2">
+            <input type="checkbox" checked class="w-4 h-4 text-black border-gray-300 rounded">
+            <span>Style Guides</span>
+          </label>
+        </li>
+        <li>
+          <label class="flex items-center space-x-2">
+            <input type="checkbox" class="w-4 h-4 text-black border-gray-300 rounded">
+            <span>Eye Health</span>
+          </label>
+        </li>
+        <li>
+          <label class="flex items-center space-x-2">
+            <input type="checkbox" class="w-4 h-4 text-black border-gray-300 rounded">
+            <span>Customer Spotlights</span>
+          </label>
+        </li>
+        <li>
+          <label class="flex items-center space-x-2">
+            <input type="checkbox" class="w-4 h-4 text-black border-gray-300 rounded">
+            <span>News & Releases</span>
+          </label>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Follow Us -->
+    <div>
+      <h3 class="font-bold text-lg mb-4">Follow us</h3>
+      <div class="flex space-x-4 text-gray-400">
+        <a href="#" aria-label="Instagram">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><!-- Instagram Icon --></svg>
+        </a>
+        <a href="#" aria-label="Facebook">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><!-- Facebook Icon --></svg>
+        </a>
+        <a href="#" aria-label="Twitter">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><!-- Twitter Icon --></svg>
+        </a>
+        <a href="#" aria-label="LinkedIn">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><!-- LinkedIn Icon --></svg>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Articles List -->
+  <div class="md:col-span-2 space-y-8">
+    <!-- Article 1 -->
+    <div class="flex gap-4 items-start">
+      <img src="https://cdn.prod.website-files.com/68fb711044bb5e266ea3c279/68fb7807cd32257d3186ec1a_Blog%20Image%2013.webp" alt="Sunglasses 1" class="w-80 h-70 object-cover rounded">
+      <div>
+        <h4 class="font-bold text-lg">THE ULTIMATE SUNGLASSES FACE</h4>
+        <p class="text-gray-500 text-sm mt-1">
+          Discover the perfect frame for your face with expert tips to balance style and comfort.
+        </p>
+        <div class="flex items-center space-x-4 mt-2 text-gray-400 text-xs">
+          <div class="flex items-center space-x-1">
+            <img src="https://cdn.prod.website-files.com/68fb711044bb5e266ea3c279/68fb759ff94b50c4d0d71555_Author%20Image%2001.webp" alt="Sophia Lin" class="w-6 h-6 rounded-full">
+            <span>Sophia Lin</span>
+          </div>
+          <span>October 24, 2025</span>
+          <span>5 min read</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Article 2 -->
+    <div class="flex gap-4 items-start">
+      <img src="https://cdn.prod.website-files.com/68fb711044bb5e266ea3c279/68fb77e264f8df6e38a9bf38_Blog%20Image%2012.webp" alt="Sunglasses 2" class="w-80 h-70 object-cover rounded">
+      <div>
+        <h4 class="font-bold text-lg">SUNGLASS TRENDS FOR EVERY WEATHER</h4>
+        <p class="text-gray-500 text-sm mt-1">
+          From sunny summers to crisp winters, learn which frames elevate your look year-round.
+        </p>
+        <div class="flex items-center space-x-4 mt-2 text-gray-400 text-xs">
+          <div class="flex items-center space-x-1">
+            <img src="https://cdn.prod.website-files.com/68fb711044bb5e266ea3c279/68fb733b52d42bcef217daba_Author%20Image%2002.webp" alt="Leo Carter" class="w-6 h-6 rounded-full">
+            <span>Leo Carter</span>
+          </div>
+          <span>October 24, 2025</span>
+          <span>4 min read</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Article 3 -->
+    <div class="flex gap-4 items-start">
+      <img src="https://cdn.prod.website-files.com/68fb711044bb5e266ea3c279/68fb777dc9253d71e9d6ec56_Blog%20Image%2011.webp" alt="Sunglasses 3" class="w-80 h-70 object-cover rounded">
+      <div>
+        <h4 class="font-bold text-lg">HOW TO STYLE SUNGLASSES WITH EVERYDAY</h4>
+        <p class="text-gray-500 text-sm mt-1">
+          Pair your frames with casual, business, or evening wear to create effortlessly polished looks.
+        </p>
+        <div class="flex items-center space-x-4 mt-2 text-gray-400 text-xs">
+          <div class="flex items-center space-x-1">
+            <img src="https://cdn.prod.website-files.com/68fb711044bb5e266ea3c279/68fb72c1d242196cfc6312b5_Author%20Image%2003.webp" alt="Clara Wynn" class="w-6 h-6 rounded-full">
+            <span>Clara Wynn</span>
+          </div>
+          <span>October 24, 2025</span>
+          <span>7 min read</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Article 3 -->
+    <div class="flex gap-4 items-start">
+      <img src="https://cdn.prod.website-files.com/68fb711044bb5e266ea3c279/68fb775764f8df6e38a99090_Blog%20Image%2010.webp" alt="Sunglasses 3" class="w-80 h-70 object-cover rounded">
+      <div>
+        <h4 class="font-bold text-lg">HOW TO STYLE SUNGLASSES WITH EVERYDAY</h4>
+        <p class="text-gray-500 text-sm mt-1">
+          Pair your frames with casual, business, or evening wear to create effortlessly polished looks.
+        </p>
+        <div class="flex items-center space-x-4 mt-2 text-gray-400 text-xs">
+          <div class="flex items-center space-x-1">
+            <img src="https://cdn.prod.website-files.com/68fb711044bb5e266ea3c279/68fb7338e53c53b222b804cd_Author%20Image%2004.webp" alt="Clara Wynn" class="w-6 h-6 rounded-full">
+            <span>Clara Wynn</span>
+          </div>
+          <span>October 24, 2025</span>
+          <span>7 min read</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="bg-[#0e0e0e] text-gray-400 pt-20 pb-10">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
+
+    <!-- BRAND + SUBSCRIBE -->
+    <div>
+      <h2 class="text-3xl font-extrabold mb-6">
+        <span class="text-yellow-400">EYE</span><span class="text-white">CONIC</span>
+      </h2>
+
+      <p class="uppercase text-sm text-gray-500 mb-4">
+        Sign up and get 15% off your first pair
+      </p>
+
+      <input
+        type="email"
+        placeholder="Enter your email"
+        class="w-full bg-transparent border border-gray-600 px-4 py-3 text-sm mb-4 focus:outline-none focus:border-yellow-400"
+      />
+
+      <button class="w-full bg-white text-black py-3 text-sm font-semibold hover:bg-yellow-400 transition">
+        Subscribe
+      </button>
+    </div>
+
+    <!-- MAIN PAGES -->
+    <div>
+      <h3 class="text-yellow-400 font-semibold mb-6 uppercase text-sm">
+        Main Pages
+      </h3>
+      <ul class="space-y-3">
+        <li><a href="#" class="hover:text-white transition">Home</a></li>
+        <li><a href="#" class="hover:text-white transition">Shop</a></li>
+        <li><a href="#" class="hover:text-white transition">About</a></li>
+        <li><a href="#" class="hover:text-white transition">Blog</a></li>
+        <li><a href="#" class="hover:text-white transition">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- UTILITY PAGES -->
+    <div>
+      <h3 class="text-yellow-400 font-semibold mb-6 uppercase text-sm">
+        Utility Pages
+      </h3>
+      <ul class="space-y-3">
+        <li><a href="#" class="hover:text-white transition">Style Guide</a></li>
+        <li><a href="#" class="hover:text-white transition">Changelog</a></li>
+        <li><a href="#" class="hover:text-white transition">License</a></li>
+        <li><a href="#" class="hover:text-white transition">Password Protected</a></li>
+        <li><a href="#" class="hover:text-white transition">404</a></li>
+      </ul>
+    </div>
+
+    <!-- SOCIAL -->
+    <div>
+      <h3 class="text-yellow-400 font-semibold mb-6 uppercase text-sm">
+        Social
+      </h3>
+      <ul class="space-y-3">
+        <li><a href="#" class="hover:text-white transition">Facebook</a></li>
+        <li><a href="#" class="hover:text-white transition">Instagram</a></li>
+        <li><a href="#" class="hover:text-white transition">Twitter (X)</a></li>
+        <li><a href="#" class="hover:text-white transition">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- BOTTOM BAR -->
+  <div class="border-t border-gray-800 mt-16 pt-6">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between text-sm">
+      <p>© Eyeconic 2025. All rights reserved.</p>
+      <p class="text-gray-500">Powered by Webflow</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Eyeconic Hero Parallax</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+  <style>
+    /* Scroll reveal animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body class="bg-white text-black">
+
+<!-- ================= NAVBAR ================= -->
+<header class="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur">
+  <div class="max-w-7xl mx-auto px-10 py-5 flex items-center justify-between">
+    <div class="text-xl font-semibold tracking-wide">EYCONIC</div>
+
+    <nav class="hidden md:flex gap-10 text-sm">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+      <a href="#">Pages</a>
+    </nav>
+
+    <div class="text-lg">👜</div>
+  </div>
+</header>
+<!-- HERO SECTION -->
+  <section class="relative h-[60vh] flex items-center justify-center bg-cover bg-center" style="background-image: url('https://cdn.prod.website-files.com/68f2410302676d635788acc0/68f86e03d342142ff65f256b_48c41c0936d81d424a10c260dbea99c5_Shop%20BG.webp');">
+    <h1 class="text-5xl md:text-6xl font-bold text-white">
+      OUR <span class="text-yellow-400">SHOP</span>
+    </h1>
+  </section>
+
+  <!-- FILTER BUTTONS -->
+  <div class="max-w-6xl mx-auto mt-10 flex gap-4 flex-wrap justify-center">
+    <button class="px-4 py-2 border border-gray-300 hover:bg-gray-100 transition">ALL</button>
+    <button class="px-4 py-2 border border-gray-300 hover:bg-gray-100 transition">MAN</button>
+    <button class="px-4 py-2 border border-gray-300 hover:bg-gray-100 transition">WOMAN</button>
+    <button class="px-4 py-2 border border-gray-300 hover:bg-gray-100 transition">KIDS</button>
+    <button class="px-4 py-2 border border-gray-300 hover:bg-gray-100 transition">ACCESSORIES</button>
+  </div>
+
+  <!-- PRODUCTS GRID -->
+  <section class="max-w-6xl mx-auto mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-4">
+    
+    <div class="reveal bg-white shadow-lg p-4">
+      <img src="https://cdn.prod.website-files.com/68fb711044bb5e266ea3c279/690628af04d4ecb365791c97_Product%20Image%2001.webp" alt="Velvet Motion" class="w-full h-64 object-cover mb-4">
+      <h2 class="font-bold text-lg">VELVET MOTION</h2>
+      <p class="text-gray-500">$119.00</p>
+    </div>
+
+    <div class="reveal bg-white shadow-lg p-4">
+      <img src="https://cdn.prod.website-files.com/68fb711044bb5e266ea3c279/6906285cb9dc753d2d2a83b5_Product%20Image%2002.webp" alt="Urban Opulence" class="w-full h-64 object-cover mb-4">
+      <h2 class="font-bold text-lg">URBAN OPULENCE</h2>
+      <p class="text-gray-500">$99.00</p>
+    </div>
+
+    <div class="reveal bg-white shadow-lg p-4">
+      <img src="https://cdn.prod.website-files.com/68fb711044bb5e266ea3c279/690627fb10e0d948308bb6f4_Product%20Image%2003.webp" alt="Modern Grandeur" class="w-full h-64 object-cover mb-4">
+      <h2 class="font-bold text-lg">MODERN GRANDEUR</h2>
+      <p class="text-gray-500">$159.00</p>
+    </div>
+
+    
+    <div class="reveal bg-white shadow-lg p-4">
+      <img src="https://cdn.prod.website-files.com/68fb711044bb5e266ea3c279/690627a69e648d5118ec7041_Product%20Image%2004.webp" alt="Velvet Motion" class="w-full h-64 object-cover mb-4">
+      <h2 class="font-bold text-lg">VELVET MOTION</h2>
+      <p class="text-gray-500">$119.00</p>
+    </div>
+
+    <div class="reveal bg-white shadow-lg p-4">
+      <img src="https://cdn.prod.website-files.com/68fb711044bb5e266ea3c279/68ff9b24945e7a68f5707e6a_Product%20Image%2005.webp" alt="Urban Opulence" class="w-full h-64 object-cover mb-4">
+      <h2 class="font-bold text-lg">URBAN OPULENCE</h2>
+      <p class="text-gray-500">$99.00</p>
+    </div>
+
+    <div class="reveal bg-white shadow-lg p-4">
+      <img src="https://cdn.prod.website-files.com/68fb711044bb5e266ea3c279/68ff97fffa9d9a72585d5193_Product%20Image%2006.webp" alt="Modern Grandeur" class="w-full h-64 object-cover mb-4">
+      <h2 class="font-bold text-lg">MODERN GRANDEUR</h2>
+      <p class="text-gray-500">$159.00</p>
+    </div>
+    
+    <div class="reveal bg-white shadow-lg p-4">
+      <img src="https://cdn.prod.website-files.com/68fb711044bb5e266ea3c279/68fdfda8fa37ff75e6f29d79_Product%20Image%2007.webp" alt="Velvet Motion" class="w-full h-64 object-cover mb-4">
+      <h2 class="font-bold text-lg">VELVET MOTION</h2>
+      <p class="text-gray-500">$119.00</p>
+    </div>
+
+    <div class="reveal bg-white shadow-lg p-4">
+      <img src="https://cdn.prod.website-files.com/68fb711044bb5e266ea3c279/68fcf8d0bf3aca1a8d4d830d_Product%20Image%2008.webp" alt="Urban Opulence" class="w-full h-64 object-cover mb-4">
+      <h2 class="font-bold text-lg">URBAN OPULENCE</h2>
+      <p class="text-gray-500">$99.00</p>
+    </div>
+
+    <div class="reveal bg-white shadow-lg p-4">
+      <img src="https://cdn.prod.website-files.com/68fb711044bb5e266ea3c279/69084d205d9e8fd43f11f5eb_Product%20Image%2009.webp" alt="Modern Grandeur" class="w-full h-64 object-cover mb-4">
+      <h2 class="font-bold text-lg">MODERN GRANDEUR</h2>
+      <p class="text-gray-500">$159.00</p>
+    </div>
+  </section>
+
+  <!-- SCROLL REVEAL SCRIPT -->
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+
+    const revealOnScroll = () => {
+      for (let i = 0; i < reveals.length; i++) {
+        const windowHeight = window.innerHeight;
+        const elementTop = reveals[i].getBoundingClientRect().top;
+        const elementVisible = 100;
+
+        if (elementTop < windowHeight - elementVisible) {
+          reveals[i].classList.add('active');
+        } 
+      }
+    }
+
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+  </script>
+
+
+
+<footer class="bg-[#0e0e0e] text-gray-400 pt-20 pb-10">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
+
+    <!-- BRAND + SUBSCRIBE -->
+    <div>
+      <h2 class="text-3xl font-extrabold mb-6">
+        <span class="text-yellow-400">EYE</span><span class="text-white">conic</span>
+      </h2>
+
+      <p class="uppercase text-sm text-gray-500 mb-4">
+        Sign up and get 15% off your first pair
+      </p>
+
+      <input
+        type="email"
+        placeholder="Enter your email"
+        class="w-full bg-transparent border border-gray-600 px-4 py-3 text-sm mb-4 focus:outline-none focus:border-yellow-400"
+      />
+
+      <button class="w-full bg-white text-black py-3 text-sm font-semibold hover:bg-yellow-400 transition">
+        Subscribe
+      </button>
+    </div>
+
+    <!-- MAIN PAGES -->
+    <div>
+      <h3 class="text-yellow-400 font-semibold mb-6 uppercase text-sm">
+        Main Pages
+      </h3>
+      <ul class="space-y-3">
+        <li><a href="#" class="hover:text-white transition">Home</a></li>
+        <li><a href="#" class="hover:text-white transition">Shop</a></li>
+        <li><a href="#" class="hover:text-white transition">About</a></li>
+        <li><a href="#" class="hover:text-white transition">Blog</a></li>
+        <li><a href="#" class="hover:text-white transition">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- UTILITY PAGES -->
+    <div>
+      <h3 class="text-yellow-400 font-semibold mb-6 uppercase text-sm">
+        Utility Pages
+      </h3>
+      <ul class="space-y-3">
+        <li><a href="#" class="hover:text-white transition">Style Guide</a></li>
+        <li><a href="#" class="hover:text-white transition">Changelog</a></li>
+        <li><a href="#" class="hover:text-white transition">License</a></li>
+        <li><a href="#" class="hover:text-white transition">Password Protected</a></li>
+        <li><a href="#" class="hover:text-white transition">404</a></li>
+      </ul>
+    </div>
+
+    <!-- SOCIAL -->
+    <div>
+      <h3 class="text-yellow-400 font-semibold mb-6 uppercase text-sm">
+        Social
+      </h3>
+      <ul class="space-y-3">
+        <li><a href="#" class="hover:text-white transition">Facebook</a></li>
+        <li><a href="#" class="hover:text-white transition">Instagram</a></li>
+        <li><a href="#" class="hover:text-white transition">Twitter (X)</a></li>
+        <li><a href="#" class="hover:text-white transition">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- BOTTOM BAR -->
+  <div class="border-t border-gray-800 mt-16 pt-6">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between text-sm">
+      <p>© Eyeconic 2025. All rights reserved.</p>
+      <p class="text-gray-500">Powered by Webflow</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

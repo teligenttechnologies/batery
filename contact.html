@@ -31,21 +31,65 @@
 
 <!-- ================= NAVBAR ================= -->
 <header class="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur">
-  <div class="max-w-7xl mx-auto px-10 py-5 flex items-center justify-between">
+  <div class="max-w-7xl mx-auto px-4 md:px-10 py-4 flex items-center justify-between">
+
+    <!-- Logo -->
     <div class="text-xl font-semibold tracking-wide">EYCONIC</div>
 
+    <!-- Desktop Nav -->
     <nav class="hidden md:flex gap-10 text-sm">
+      <a href="index.html" class="hover:opacity-60">Home</a>
+      <a href="shop.html" class="hover:opacity-60">Shop</a>
+      <a href="about.html" class="hover:opacity-60">About</a>
+      <a href="blog.html" class="hover:opacity-60">Blog</a>
+      <a href="contact.html" class="hover:opacity-60">Contact</a>
+    </nav>
+
+    <!-- Right -->
+    <div class="flex items-center gap-4">
+      <div class="text-lg">👜</div>
+
+      <!-- Hamburger -->
+      <button id="menuBtn" class="md:hidden text-2xl leading-none">
+        ☰
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu"
+       class="md:hidden absolute top-full left-0 w-full bg-white
+              border-t border-black/10
+              opacity-0 pointer-events-none
+              translate-y-[-10px]
+              transition-all duration-300">
+
+    <nav class="flex flex-col gap-6 px-6 py-8 text-sm">
       <a href="index.html">Home</a>
       <a href="shop.html">Shop</a>
       <a href="about.html">About</a>
       <a href="blog.html">Blog</a>
       <a href="contact.html">Contact</a>
-      
     </nav>
-
-    <div class="text-lg">👜</div>
   </div>
 </header>
+<script>
+const btn = document.getElementById('menuBtn');
+const menu = document.getElementById('mobileMenu');
+
+btn.addEventListener('click', () => {
+  const open = menu.classList.contains('opacity-100');
+
+  if (open) {
+    menu.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
+    menu.classList.add('opacity-0', 'translate-y-[-10px]', 'pointer-events-none');
+  } else {
+    menu.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
+    menu.classList.remove('opacity-0', 'translate-y-[-10px]', 'pointer-events-none');
+  }
+});
+</script>
+
 <section class="py-16 bg-white">
   <div class="max-w-7xl mx-auto px-4">
     
@@ -108,61 +152,90 @@
 
   </div>
 </section>
-<section class="py-32 bg-white">
-  <div class="max-w-6xl mx-auto px-6">
+<section class="py-16 md:py-32 bg-white">
+  <div class="max-w-6xl mx-auto px-4 md:px-6">
 
     <!-- TOP IMAGE -->
-    <div class="flex justify-center mb-16">
-      <img src="https://cdn.prod.website-files.com/68f2410302676d635788acc0/68ff68897a3eef10b45ab59d_Follow%20Image%2001.avif" class="w-48 h-48 object-cover reveal">
+    <div class="flex justify-center mb-10 md:mb-16">
+      <img
+        src="https://cdn.prod.website-files.com/68f2410302676d635788acc0/68ff68897a3eef10b45ab59d_Follow%20Image%2001.avif"
+        class="follow-img reveal">
     </div>
 
     <!-- UPPER IMAGES -->
-    <div class="grid grid-cols-3 items-center mb-20">
+    <div class="grid grid-cols-1 sm:grid-cols-3 items-center gap-10 mb-14 md:mb-20">
       <div class="flex justify-center">
-        <img src="https://cdn.prod.website-files.com/68f2410302676d635788acc0/68ff6889538d32c5f8a622a7_Follow%20Image%2002.avif" class="w-48 h-48 object-cover reveal">
+        <img src="https://cdn.prod.website-files.com/68f2410302676d635788acc0/68ff6889538d32c5f8a622a7_Follow%20Image%2002.avif"
+             class="follow-img reveal">
       </div>
 
-      <div></div>
+      <div class="hidden sm:block"></div>
 
       <div class="flex justify-center">
-        <img src="https://cdn.prod.website-files.com/68f2410302676d635788acc0/68ff6889659d50ac5e261f8a_Follow%20Image%2003.avif" class="w-48 h-48 object-cover reveal">
+        <img src="https://cdn.prod.website-files.com/68f2410302676d635788acc0/68ff6889659d50ac5e261f8a_Follow%20Image%2003.avif"
+             class="follow-img reveal">
       </div>
     </div>
 
     <!-- TEXT -->
-    <div class="text-center mb-12">
-      <h2 class="text-6xl font-bold tracking-widest mb-4">
+    <div class="text-center mb-12 md:mb-16">
+      <h2 class="text-3xl sm:text-4xl md:text-6xl font-bold tracking-widest mb-3">
         FOLLOW US
       </h2>
-      <p class="text-6xl text-gray-400 mb-2">
+      <p class="text-2xl sm:text-3xl md:text-6xl text-gray-400 mb-2">
         FOR NEW COLLECTIONS
       </p>
-      <p class="text-6xl font-bold">
-        STYLE TIPS,<br>AND EXCLUSIVE OFFERS
+      <p class="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight">
+        STYLE TIPS,<br class="hidden sm:block"> AND EXCLUSIVE OFFERS
       </p>
     </div>
 
     <!-- LOWER IMAGES -->
-    <div class="grid grid-cols-3 items-center mb-20">
+    <div class="grid grid-cols-1 sm:grid-cols-3 items-center gap-10 mb-14 md:mb-20">
       <div class="flex justify-center">
-        <img src="https://cdn.prod.website-files.com/68f2410302676d635788acc0/68ff6889173672cc5b55311d_Follow%20Image%2004.avif" class="w-48 h-48 object-cover reveal">
+        <img src="https://cdn.prod.website-files.com/68f2410302676d635788acc0/68ff6889173672cc5b55311d_Follow%20Image%2004.avif"
+             class="follow-img reveal">
       </div>
 
-      <div></div>
+      <div class="hidden sm:block"></div>
 
       <div class="flex justify-center">
-        <img src="https://cdn.prod.website-files.com/68f2410302676d635788acc0/68ff6889ab88bfdfe949f0da_Follow%20Image%2005.png" class="w-48 h-48 object-cover reveal">
+        <img src="https://cdn.prod.website-files.com/68f2410302676d635788acc0/68ff6889ab88bfdfe949f0da_Follow%20Image%2005.png"
+             class="follow-img reveal">
       </div>
     </div>
 
     <!-- BOTTOM IMAGE -->
     <div class="flex justify-center">
-      <img src="https://cdn.prod.website-files.com/68f2410302676d635788acc0/68ff6889659d50ac5e261f8a_Follow%20Image%2003.avif" class="w-48 h-48 object-cover reveal">
+      <img
+        src="https://cdn.prod.website-files.com/68f2410302676d635788acc0/68ff6889659d50ac5e261f8a_Follow%20Image%2003.avif"
+        class="follow-img reveal">
     </div>
 
   </div>
 </section>
+
 <style>
+  .follow-img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+}
+
+@media (min-width: 640px) {
+  .follow-img {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .follow-img {
+    width: 192px;
+    height: 192px;
+  }
+}
+
 .reveal {
   opacity: 0;
   transform: scale(0.85) translateY(30px);
@@ -173,24 +246,20 @@
   opacity: 1;
   transform: scale(1) translateY(0);
 }
+
 </style>
 <script>
-  const reveals = document.querySelectorAll('.reveal');
+const reveals = document.querySelectorAll('.reveal');
 
-  const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show');
-        }
-      });
-    },
-    {
-      threshold: 0.25
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
     }
-  );
+  });
+}, { threshold: 0.25 });
 
-  reveals.forEach(el => observer.observe(el));
+reveals.forEach(el => observer.observe(el));
 </script>
 
 

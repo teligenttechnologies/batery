@@ -74,22 +74,6 @@
     </nav>
   </div>
 </header>
-<script>
-const btn = document.getElementById('menuBtn');
-const menu = document.getElementById('mobileMenu');
-
-btn.addEventListener('click', () => {
-  const open = menu.classList.contains('opacity-100');
-
-  if (open) {
-    menu.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
-    menu.classList.add('opacity-0', 'translate-y-[-10px]', 'pointer-events-none');
-  } else {
-    menu.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
-    menu.classList.remove('opacity-0', 'translate-y-[-10px]', 'pointer-events-none');
-  }
-});
-</script>
 
 <section class="bg-gray-50 py-12" style="margin-top: 200PX;">
   <div class="max-w-6xl mx-auto px-6 md:flex md:justify-between md:items-start gap-8">
@@ -139,34 +123,37 @@ btn.addEventListener('click', () => {
   >
 
 </section>
-<section class="max-w-7xl mx-auto px-8 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+<section class="max-w-7xl mx-auto px-4 md:px-8 py-10 md:py-12
+                grid grid-cols-1 md:grid-cols-3 gap-10">
+
   <!-- Sidebar Filters -->
-  <aside class="space-y-8 md:col-span-1">
+  <aside class="space-y-10 md:col-span-1 order-1 md:order-none">
+
     <!-- Quick Filters -->
     <div>
       <h3 class="font-bold text-lg mb-4">QUICK FILTERS</h3>
-      <ul class="space-y-2">
+      <ul class="space-y-3 text-sm">
         <li>
-          <label class="flex items-center space-x-2">
-            <input type="checkbox" checked class="w-4 h-4 text-black border-gray-300 rounded">
+          <label class="flex items-center gap-2">
+            <input type="checkbox" checked class="w-4 h-4 accent-black">
             <span>Style Guides</span>
           </label>
         </li>
         <li>
-          <label class="flex items-center space-x-2">
-            <input type="checkbox" class="w-4 h-4 text-black border-gray-300 rounded">
+          <label class="flex items-center gap-2">
+            <input type="checkbox" class="w-4 h-4 accent-black">
             <span>Eye Health</span>
           </label>
         </li>
         <li>
-          <label class="flex items-center space-x-2">
-            <input type="checkbox" class="w-4 h-4 text-black border-gray-300 rounded">
+          <label class="flex items-center gap-2">
+            <input type="checkbox" class="w-4 h-4 accent-black">
             <span>Customer Spotlights</span>
           </label>
         </li>
         <li>
-          <label class="flex items-center space-x-2">
-            <input type="checkbox" class="w-4 h-4 text-black border-gray-300 rounded">
+          <label class="flex items-center gap-2">
+            <input type="checkbox" class="w-4 h-4 accent-black">
             <span>News & Releases</span>
           </label>
         </li>
@@ -176,102 +163,98 @@ btn.addEventListener('click', () => {
     <!-- Follow Us -->
     <div>
       <h3 class="font-bold text-lg mb-4">Follow us</h3>
-      <div class="flex space-x-4 text-gray-400">
-        <a href="#" aria-label="Instagram">
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><!-- Instagram Icon --></svg>
-        </a>
-        <a href="#" aria-label="Facebook">
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><!-- Facebook Icon --></svg>
-        </a>
-        <a href="#" aria-label="Twitter">
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><!-- Twitter Icon --></svg>
-        </a>
-        <a href="#" aria-label="LinkedIn">
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><!-- LinkedIn Icon --></svg>
-        </a>
+      <div class="flex gap-4 text-gray-400">
+        <a href="#"><svg class="w-5 h-5"></svg></a>
+        <a href="#"><svg class="w-5 h-5"></svg></a>
+        <a href="#"><svg class="w-5 h-5"></svg></a>
+        <a href="#"><svg class="w-5 h-5"></svg></a>
       </div>
     </div>
   </aside>
 
-  <!-- Articles List -->
-  <div class="md:col-span-2 space-y-8">
-    <!-- Article 1 -->
-    <div class="flex gap-4 items-start">
-      <img src="https://cdn.prod.website-files.com/68fb711044bb5e266ea3c279/68fb7807cd32257d3186ec1a_Blog%20Image%2013.webp" alt="Sunglasses 1" class="w-80 h-70 object-cover rounded">
-      <div>
-        <h4 class="font-bold text-lg">THE ULTIMATE SUNGLASSES FACE</h4>
-        <p class="text-gray-500 text-sm mt-1">
+  <!-- Articles -->
+  <div class="md:col-span-2 space-y-10 order-2">
+
+    <!-- ARTICLE CARD -->
+    <article class="flex flex-col sm:flex-row gap-5">
+      <img
+        src="https://cdn.prod.website-files.com/68fb711044bb5e266ea3c279/68fb7807cd32257d3186ec1a_Blog%20Image%2013.webp"
+        class="w-full sm:w-56 md:w-72 h-52 sm:h-44 md:h-48 object-cover rounded">
+
+      <div class="flex-1">
+        <h4 class="font-bold text-base md:text-lg">
+          THE ULTIMATE SUNGLASSES FACE
+        </h4>
+
+        <p class="text-gray-500 text-sm mt-2">
           Discover the perfect frame for your face with expert tips to balance style and comfort.
         </p>
-        <div class="flex items-center space-x-4 mt-2 text-gray-400 text-xs">
-          <div class="flex items-center space-x-1">
-            <img src="https://cdn.prod.website-files.com/68fb711044bb5e266ea3c279/68fb759ff94b50c4d0d71555_Author%20Image%2001.webp" alt="Sophia Lin" class="w-6 h-6 rounded-full">
+
+        <div class="flex flex-wrap items-center gap-x-4 gap-y-2 mt-3 text-gray-400 text-xs">
+          <div class="flex items-center gap-2">
+            <img src="https://cdn.prod.website-files.com/68fb711044bb5e266ea3c279/68fb759ff94b50c4d0d71555_Author%20Image%2001.webp"
+                 class="w-6 h-6 rounded-full">
             <span>Sophia Lin</span>
           </div>
           <span>October 24, 2025</span>
           <span>5 min read</span>
         </div>
       </div>
-    </div>
+    </article>
 
-    <!-- Article 2 -->
-    <div class="flex gap-4 items-start">
-      <img src="https://cdn.prod.website-files.com/68fb711044bb5e266ea3c279/68fb77e264f8df6e38a9bf38_Blog%20Image%2012.webp" alt="Sunglasses 2" class="w-80 h-70 object-cover rounded">
-      <div>
-        <h4 class="font-bold text-lg">SUNGLASS TRENDS FOR EVERY WEATHER</h4>
-        <p class="text-gray-500 text-sm mt-1">
-          From sunny summers to crisp winters, learn which frames elevate your look year-round.
+    <article class="flex flex-col sm:flex-row gap-5">
+      <img
+        src="https://cdn.prod.website-files.com/68fb711044bb5e266ea3c279/68fb7807cd32257d3186ec1a_Blog%20Image%2013.webp"
+        class="w-full sm:w-56 md:w-72 h-52 sm:h-44 md:h-48 object-cover rounded">
+
+      <div class="flex-1">
+        <h4 class="font-bold text-base md:text-lg">
+          THE ULTIMATE SUNGLASSES FACE
+        </h4>
+
+        <p class="text-gray-500 text-sm mt-2">
+          Discover the perfect frame for your face with expert tips to balance style and comfort.
         </p>
-        <div class="flex items-center space-x-4 mt-2 text-gray-400 text-xs">
-          <div class="flex items-center space-x-1">
-            <img src="https://cdn.prod.website-files.com/68fb711044bb5e266ea3c279/68fb733b52d42bcef217daba_Author%20Image%2002.webp" alt="Leo Carter" class="w-6 h-6 rounded-full">
-            <span>Leo Carter</span>
+
+        <div class="flex flex-wrap items-center gap-x-4 gap-y-2 mt-3 text-gray-400 text-xs">
+          <div class="flex items-center gap-2">
+            <img src="https://cdn.prod.website-files.com/68fb711044bb5e266ea3c279/68fb759ff94b50c4d0d71555_Author%20Image%2001.webp"
+                 class="w-6 h-6 rounded-full">
+            <span>Sophia Lin</span>
           </div>
           <span>October 24, 2025</span>
-          <span>4 min read</span>
+          <span>5 min read</span>
         </div>
       </div>
-    </div>
+    </article>
+    <article class="flex flex-col sm:flex-row gap-5">
+      <img
+        src="https://cdn.prod.website-files.com/68fb711044bb5e266ea3c279/68fb7807cd32257d3186ec1a_Blog%20Image%2013.webp"
+        class="w-full sm:w-56 md:w-72 h-52 sm:h-44 md:h-48 object-cover rounded">
 
-    <!-- Article 3 -->
-    <div class="flex gap-4 items-start">
-      <img src="https://cdn.prod.website-files.com/68fb711044bb5e266ea3c279/68fb777dc9253d71e9d6ec56_Blog%20Image%2011.webp" alt="Sunglasses 3" class="w-80 h-70 object-cover rounded">
-      <div>
-        <h4 class="font-bold text-lg">HOW TO STYLE SUNGLASSES WITH EVERYDAY</h4>
-        <p class="text-gray-500 text-sm mt-1">
-          Pair your frames with casual, business, or evening wear to create effortlessly polished looks.
+      <div class="flex-1">
+        <h4 class="font-bold text-base md:text-lg">
+          THE ULTIMATE SUNGLASSES FACE
+        </h4>
+
+        <p class="text-gray-500 text-sm mt-2">
+          Discover the perfect frame for your face with expert tips to balance style and comfort.
         </p>
-        <div class="flex items-center space-x-4 mt-2 text-gray-400 text-xs">
-          <div class="flex items-center space-x-1">
-            <img src="https://cdn.prod.website-files.com/68fb711044bb5e266ea3c279/68fb72c1d242196cfc6312b5_Author%20Image%2003.webp" alt="Clara Wynn" class="w-6 h-6 rounded-full">
-            <span>Clara Wynn</span>
+
+        <div class="flex flex-wrap items-center gap-x-4 gap-y-2 mt-3 text-gray-400 text-xs">
+          <div class="flex items-center gap-2">
+            <img src="https://cdn.prod.website-files.com/68fb711044bb5e266ea3c279/68fb759ff94b50c4d0d71555_Author%20Image%2001.webp"
+                 class="w-6 h-6 rounded-full">
+            <span>Sophia Lin</span>
           </div>
           <span>October 24, 2025</span>
-          <span>7 min read</span>
+          <span>5 min read</span>
         </div>
       </div>
-    </div>
-
-    <!-- Article 3 -->
-    <div class="flex gap-4 items-start">
-      <img src="https://cdn.prod.website-files.com/68fb711044bb5e266ea3c279/68fb775764f8df6e38a99090_Blog%20Image%2010.webp" alt="Sunglasses 3" class="w-80 h-70 object-cover rounded">
-      <div>
-        <h4 class="font-bold text-lg">HOW TO STYLE SUNGLASSES WITH EVERYDAY</h4>
-        <p class="text-gray-500 text-sm mt-1">
-          Pair your frames with casual, business, or evening wear to create effortlessly polished looks.
-        </p>
-        <div class="flex items-center space-x-4 mt-2 text-gray-400 text-xs">
-          <div class="flex items-center space-x-1">
-            <img src="https://cdn.prod.website-files.com/68fb711044bb5e266ea3c279/68fb7338e53c53b222b804cd_Author%20Image%2004.webp" alt="Clara Wynn" class="w-6 h-6 rounded-full">
-            <span>Clara Wynn</span>
-          </div>
-          <span>October 24, 2025</span>
-          <span>7 min read</span>
-        </div>
-      </div>
-    </div>
+    </article>
   </div>
 </section>
+
 
 
 <footer class="bg-[#0e0e0e] text-gray-400 pt-20 pb-10">

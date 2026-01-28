@@ -31,20 +31,65 @@
 
 <!-- ================= NAVBAR ================= -->
 <header class="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur">
-  <div class="max-w-7xl mx-auto px-10 py-5 flex items-center justify-between">
+  <div class="max-w-7xl mx-auto px-4 md:px-10 py-4 flex items-center justify-between">
+
+    <!-- Logo -->
     <div class="text-xl font-semibold tracking-wide">EYCONIC</div>
 
+    <!-- Desktop Nav -->
     <nav class="hidden md:flex gap-10 text-sm">
+      <a href="index.html" class="hover:opacity-60">Home</a>
+      <a href="shop.html" class="hover:opacity-60">Shop</a>
+      <a href="about.html" class="hover:opacity-60">About</a>
+      <a href="blog.html" class="hover:opacity-60">Blog</a>
+      <a href="contact.html" class="hover:opacity-60">Contact</a>
+    </nav>
+
+    <!-- Right -->
+    <div class="flex items-center gap-4">
+      <div class="text-lg">👜</div>
+
+      <!-- Hamburger -->
+      <button id="menuBtn" class="md:hidden text-2xl leading-none">
+        ☰
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu"
+       class="md:hidden absolute top-full left-0 w-full bg-white
+              border-t border-black/10
+              opacity-0 pointer-events-none
+              translate-y-[-10px]
+              transition-all duration-300">
+
+    <nav class="flex flex-col gap-6 px-6 py-8 text-sm">
       <a href="index.html">Home</a>
       <a href="shop.html">Shop</a>
       <a href="about.html">About</a>
       <a href="blog.html">Blog</a>
       <a href="contact.html">Contact</a>
     </nav>
-
-    <div class="text-lg">👜</div>
   </div>
 </header>
+<script>
+const btn = document.getElementById('menuBtn');
+const menu = document.getElementById('mobileMenu');
+
+btn.addEventListener('click', () => {
+  const open = menu.classList.contains('opacity-100');
+
+  if (open) {
+    menu.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
+    menu.classList.add('opacity-0', 'translate-y-[-10px]', 'pointer-events-none');
+  } else {
+    menu.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
+    menu.classList.remove('opacity-0', 'translate-y-[-10px]', 'pointer-events-none');
+  }
+});
+</script>
+
 
 <!-- ================= HERO PARALLAX ================= -->
 <section class="parallax-bg h-screen relative flex items-center pt-28">
@@ -706,36 +751,45 @@
 
   </div>
 </section>
-<section class="bg-white py-32">
-  <div id="stackWrap" class="relative h-[300vh]">
+<section class="bg-white py-16 md:py-32">
+  <div id="stackWrap" class="relative h-[260vh] md:h-[300vh]">
 
-    <div class="stack-card sticky top-32">
+    <!-- CARD 1 -->
+    <div class="stack-card sticky top-20 md:top-32">
       <div class="card-inner bg-[#f6f5f2]">
-        <h3>CLASSIC EVERYDAY SHADES</h3>
-        <p>// From aviators to wayfarers, discover frames that never go out of style.</p>
+        <div class="text-wrap">
+          <h3>CLASSIC EVERYDAY SHADES</h3>
+          <p>// From aviators to wayfarers, discover frames that never go out of style.</p>
+        </div>
         <img src="https://cdn.prod.website-files.com/68f2410302676d635788acc0/68fa480b0571246b4d03348b_Find%20Card%20Image.avif">
       </div>
     </div>
 
-    <div class="stack-card sticky top-32">
+    <!-- CARD 2 -->
+    <div class="stack-card sticky top-20 md:top-32">
       <div class="card-inner bg-[#f6f5f2]">
-        <h3>CLASSIC EVERYDAY SHADES</h3>
-        <p>// Lightweight materials & UV protection.</p>
+        <div class="text-wrap">
+          <h3>CLASSIC EVERYDAY SHADES</h3>
+          <p>// Lightweight materials & UV protection.</p>
+        </div>
         <img src="https://cdn.prod.website-files.com/68f2410302676d635788acc0/68fa48c62f64acdb88b4f9fc_Find%20Image%2002.avif">
       </div>
     </div>
 
-    <div class="stack-card sticky top-32">
-      <div class="card-inner bg-[#f6f5f2]" style="background-color: yellow;">
-        <h3>CLASSIC EVERYDAY SHADES</h3>
-        <p>// Comfortable and stylish all day.</p>
+    <!-- CARD 3 -->
+    <div class="stack-card sticky top-20 md:top-32">
+      <div class="card-inner bg-yellow-300">
+        <div class="text-wrap">
+          <h3>CLASSIC EVERYDAY SHADES</h3>
+          <p>// Comfortable and stylish all day.</p>
+        </div>
         <img src="https://cdn.prod.website-files.com/68f2410302676d635788acc0/68fa48c6fd1623b9ef758d90_Find%20Image%2003.avif">
       </div>
     </div>
 
   </div>
 </section>
-<style>
+
 .stack-card {
   height: 100vh;
   display: flex;
@@ -746,32 +800,80 @@
   width: 100%;
   max-width: 1100px;
   margin: auto;
-  padding: 80px;
+  padding: 24px;
   display: flex;
-  justify-content: space-between;
-  gap: 40px;
-  position: relative;
+  flex-direction: column;
+  gap: 24px;
   transition: transform 0.3s ease;
 }
 
-.card-inner img {
-  width: 260px;
-  height: 260px;
-  object-fit: cover;
-  transform: rotate(6deg);
+/* text */
+.card-inner h3 {
+  font-size: 28px;
+  font-weight: 700;
 }
-</style>
+
+.card-inner p {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+/* image */
+.card-inner img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  transform: rotate(3deg);
+}
+
+/* TABLET */
+@media (min-width: 768px) {
+  .card-inner {
+    padding: 48px;
+  }
+
+  .card-inner h3 {
+    font-size: 36px;
+  }
+
+  .card-inner img {
+    width: 240px;
+    height: 240px;
+    transform: rotate(5deg);
+  }
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+  .card-inner {
+    padding: 80px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .card-inner h3 {
+    font-size: 44px;
+  }
+
+  .card-inner img {
+    width: 260px;
+    height: 260px;
+    transform: rotate(6deg);
+  }
+}
 <script>
 const cards = document.querySelectorAll('.card-inner');
 
 window.addEventListener('scroll', () => {
-  cards.forEach((card, i) => {
+  cards.forEach((card) => {
     const rect = card.getBoundingClientRect();
     const offset = Math.min(0, rect.top - 150);
-    card.style.transform = `translateY(${offset * 0.3}px)`;
+    card.style.transform = `translateY(${offset * 0.25}px)`;
   });
 });
 </script>
+
 <section class="frame-section">
   <div class="frame-pin">
 
